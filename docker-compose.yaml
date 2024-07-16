@@ -1,0 +1,11 @@
+services:
+  prfs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5100:${PRFS_BIND_PORT}"
+      - "5103:${PRFS_VHOST_HTTP_PORT}"
+    volumes:
+      - ./config/frps.toml:/etc/frp/frps.toml
+      
